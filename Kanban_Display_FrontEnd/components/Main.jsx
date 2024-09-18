@@ -1,9 +1,12 @@
+import '../Css/Responsive.css'
 import { useEffect, useState } from 'react';
+
+
 import priority0 from '../src/assets/No-priority.svg';
-import priority1 from '../src/assets/SVG - Urgent Priority colour.svg';
-import priority2 from '../src/assets/Img - Low Priority.svg';
-import priority3 from '../src/assets/Img - Low Priority.svg';
-import priority4 from '../src/assets/Img - High Priority.svg';
+import priority1 from '../src/assets/Img - Low Priority.svg';
+import priority2 from '../src/assets/Img - Medium Priority.svg';
+import priority3 from '../src/assets/Img - High Priority.svg';
+import priority4 from '../src/assets/SVG - Urgent Priority colour.svg';
 import todo0 from '../src/assets/To-do.svg';
 import threeDotMenu from '../src/assets/3 dot menu.svg'
 import add from '../src/assets/add.svg'
@@ -35,11 +38,11 @@ const prioritySvgMap = {
 };
 
 const priorityNameMap = {
-    0: 'Low',
-    1: 'Medium',
-    2: 'High',
-    3: 'Urgent',
-    4: 'Critical',
+    0: 'No Priority',
+    1: 'Low',
+    2: 'Medium',
+    3: 'High',
+    4: 'Urgent',
 };
 
 const Main = ({ groupBy, orderBy }) => {
@@ -91,13 +94,13 @@ const Main = ({ groupBy, orderBy }) => {
     const renderGroupedTickets = () => {
         const grouped = groupTickets();
         return Object.entries(grouped).map(([groupKey, groupTickets], index) => (
-            <div key={groupKey} style={{ marginBottom: '20px', width: '20%' }}>
+            <div className='Main-hero' key={groupKey} >
 
                 <div style={{width:"90%"}}>
                     <div style={{float:"left"}}>
                         {groupBy == "priority" ?
                         <img
-                            src={groupTickets[index] ? prioritySvgMap[groupTickets[index].priority] : ""}
+                            src={groupTickets[0] ? prioritySvgMap[groupTickets[0].priority] : ""}
                             style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
                         />
                         : groupBy == "userId" ? <img
@@ -105,7 +108,7 @@ const Main = ({ groupBy, orderBy }) => {
                         style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
                     />:
                             <img
-                                src={groupTickets[index] ? prioritySvgMap[groupTickets[index].status] : ""}
+                                src={groupTickets[0] ? prioritySvgMap[groupTickets[0].status] : ""}
                                 style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
                             />
                     }
@@ -141,7 +144,7 @@ const Main = ({ groupBy, orderBy }) => {
                             id={ticket.id}
                             title={ticket.title}
                             status={ticket.status}
-                            priority={ticket.priority}
+                            priority={ticket ? prioritySvgMap[ticket.priority] : ""}
                             tag={ticket.tag[0]}
                             svg = {ticket ? prioritySvgMap[ticket.status] : ""}
                         />
@@ -151,7 +154,7 @@ const Main = ({ groupBy, orderBy }) => {
         ));
     };
 
-    return <div style={{height:"1000px", padding: '20px', display: 'flex',backgroundColor:"rgba(244,245,249,255)" }}>{renderGroupedTickets()}</div>;
+    return <div className="hero">{renderGroupedTickets()}</div>;
 };
 
 export default Main;
