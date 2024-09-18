@@ -1,17 +1,29 @@
-.hero{
-    height:1000px;
-     padding: 20px;
-      display: flex;
-      flex-wrap:wrap;
-      background-color:rgba(244,245,249,255)
-}
-.Main-hero{
-    margin-bottom: 20px;
-     width: 20%; 
+.hero {
+    height: 1000px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(244, 245, 249, 255);
 }
 
-@media screen and (max-width:1036px) {
-    .hero .Main-hero{
-        width: 30vw;
+.Main-hero {
+    margin-bottom: 20px;
+    width: 20%;
+}
+
+@media screen and (max-width: 1036px) {
+    .Main-hero {
+        margin-bottom: 20px;
+        width: 45vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hero {
+        justify-content: center; 
+    }
+    .Main-hero {
+     margin-bottom: 20px;
+        width: 80vw; 
     }
 }
