@@ -6,13 +6,12 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
         <div
           style={{
             display: "flex",
-            margin: "10px",
             width: "90%", 
             flexDirection: "column",
             backgroundColor: "#fff",
             borderRadius: "8px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            padding: "8px", 
+            padding: "10px", 
           }}
         >
           <div style={{ width: "100%", marginBottom: "8px" }}>
@@ -25,13 +24,15 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
           <div
             style={{
               clear: "both",
-              marginBottom: "10px",
+              width:"80%",
+              marginBottom: "2px",
               fontSize: "14px", 
               lineHeight: "1.2em", 
               height: "2.4em", 
               whiteSpace: "nowrap",
               overflow: "hidden",
               textOverflow: "ellipsis",
+              float: "left", fontWeight: "bold" 
             }}
           >
             <img
@@ -42,21 +43,8 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
           </div>
   
           <div style={{ display: "flex" }}>
-            <div
-              style={{
-                padding: "4px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderRadius: "6px",
-                fontSize: "12px", 
-                border: "1px solid #d0d0d0", 
-              }}
-            >
+            
              <img src={priority}></img>
-            </div>
   
             <div
   style={{

@@ -5,25 +5,27 @@ const GroupSelectCard = ({setGroupby,setOrderby,groupby,orderby,setOpenDisplay})
     return <>
         <div className="opendisplay">
             <div>
-                <span style={{ float: "left",fontSize: "12px" }}>Grouping</span>
+            <span style={{ float: "left", fontSize: "16px", color: "#000",padding:"10px" }}>Grouping</span>
+
                 <div
                     style={{
                         float: "right"
                     }}
                 >
                     <select  value={groupby} onChange={(e) =>{ setOpenDisplay(false); return setGroupby(e.target.value) }}
-                        style={{
-                            fontSize: "10px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            borderRadius: "6px",
-                            padding: "4px",
-                            marginLeft: "4px",
-                            border: "1px solid #ccc",
-                            backgroundColor: "#fff"
-                        }}
-                    >
+                       style={{
+                        fontSize: "14px",  // Increased font size
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "8px",  // Increased border radius for a smoother look
+                        padding: "8px",  // More padding to make it larger
+                        marginLeft: "4px",
+                        border: "1px solid #ccc",
+                        backgroundColor: "#fff",
+                        cursor: "pointer"  // Adds a pointer cursor for better UX
+                    }}
+                >
                         <option value="status">Status</option>
                         <option value="userId">User</option>
                         <option value="priority">Priority</option>
@@ -49,25 +51,29 @@ const GroupSelectCard = ({setGroupby,setOrderby,groupby,orderby,setOpenDisplay})
 
             </div>
             <div style={{ clear: "both" }}>
-            <span style={{ float: "left", fontSize: "12px" }}>Ordering</span>
+            <span style={{ float: "left", fontSize: "16px", color: "#000",padding:"10px" }}>Ordering</span>
+
+
                 <div
                     style={{
                         float: "right"
                     }}
                 >
-                    <select value={orderby} onChange={(e) =>{setOpenDisplay(false); return setOrderby(e.target.value) }}
-                        style={{
-                            fontSize: "10px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            borderRadius: "6px",
-                            padding: "4px",
-                            marginLeft: "4px",
-                            border: "1px solid #ccc",
-                            backgroundColor: "#fff"
-                        }}
-                    >
+                    <select value={orderby} onChange={(e) => { setOpenDisplay(false); return setOrderby(e.target.value); }}
+    style={{
+        fontSize: "14px",  // Increased font size
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: "8px",  // Increased border radius for a smoother look
+        padding: "8px",  // More padding to make it larger
+        marginLeft: "4px",
+        border: "1px solid #ccc",
+        backgroundColor: "#fff",
+        cursor: "pointer"  // Adds a pointer cursor for better UX
+    }}
+>
+
                         <option value="priority">Priority</option>
                         <option value="title">Title</option>
                     </select>

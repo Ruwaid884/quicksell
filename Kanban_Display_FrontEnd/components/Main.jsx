@@ -96,30 +96,31 @@ const Main = ({ groupBy, orderBy }) => {
         return Object.entries(grouped).map(([groupKey, groupTickets], index) => (
             <div className='Main-hero' key={groupKey} >
 
-                <div style={{width:"90%"}}>
-                    <div style={{float:"left"}}>
+                <div style={{ width: "90%" }}>
+                    <div style={{ float: "left" }}>
                         {groupBy == "priority" ?
-                        <img
-                            src={groupTickets[0] ? prioritySvgMap[groupTickets[0].priority] : ""}
-                            style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
-                        />
-                        : groupBy == "userId" ? <img
-                        src={imageA}
-                        style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
-                    />:
                             <img
-                                src={groupTickets[0] ? prioritySvgMap[groupTickets[0].status] : ""}
+                                src={groupTickets[0] ? prioritySvgMap[groupTickets[0].priority] : ""}
                                 style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
                             />
-                    }
+                            : groupBy == "userId" ? <img
+                                src={imageA}
+                                style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
+                            /> :
+                                <img
+                                    src={groupTickets[0] ? prioritySvgMap[groupTickets[0].status] : ""}
+                                    style={{ width: '20px', height: '20px', borderRadius: '50%', marginRight: "10px", marginLeft: "10px" }}
+                                />
+                        }
+                        <span style={{ float: "right", fontSize: "16px",marginLeft:"12px",color:"gray" }}>{groupTickets.length}</span>
+                        <span style={{ float: "right", fontSize: "16px" }}>{priorityNameMap[groupKey] || groupKey}</span>
 
-                    <h1 style={{float:"right",fontSize:"18px"}}>{priorityNameMap[groupKey] || groupKey}</h1>
                     </div>
-                    
-                    <div style={{float:"right"}}>
+
+                    <div style={{ float: "right" }}>
                         <img
                             src={add}
-                            style={{  width: '20px', height: '20px', borderRadius: '50%' }}
+                            style={{ width: '20px', height: '20px', borderRadius: '50%' }}
                         />
                         <img
                             src={threeDotMenu}
@@ -132,6 +133,7 @@ const Main = ({ groupBy, orderBy }) => {
 
                 <div
                     style={{
+                        marginTop:"50px",
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '20px',
@@ -146,7 +148,7 @@ const Main = ({ groupBy, orderBy }) => {
                             status={ticket.status}
                             priority={ticket ? prioritySvgMap[ticket.priority] : ""}
                             tag={ticket.tag[0]}
-                            svg = {ticket ? prioritySvgMap[ticket.status] : ""}
+                            svg={ticket ? prioritySvgMap[ticket.status] : ""}
                         />
                     ))}
                 </div>
