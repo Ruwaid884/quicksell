@@ -6,7 +6,7 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
         <div
           style={{
             display: "flex",
-            width: "90%", 
+            width: "96%", 
             flexDirection: "column",
             backgroundColor: "#fff",
             borderRadius: "8px",
@@ -24,7 +24,7 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
           <div
             style={{
               clear: "both",
-              width:"80%",
+              width:"96%",
               marginBottom: "2px",
               fontSize: "14px", 
               lineHeight: "1.2em", 

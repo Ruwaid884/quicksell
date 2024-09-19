@@ -1,29 +1,75 @@
 .hero {
-    height: 100%;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
+    gap: 20px;
+    overflow-x: scroll;
     background-color: rgba(244, 245, 249, 255);
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.hero::-webkit-scrollbar {
+    display: none; 
 }
 
 .Main-hero {
+    flex-basis: 300px;
+    flex-grow: 1;
+    max-width: calc(20% - 20px);
+    min-width: 250px;
     margin-bottom: 20px;
-    width: 20%;
+}
+
+.group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.group-info {
+    display: flex;
+    align-items: center;
+}
+
+.group-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.group-title {
+    font-size: 16px;
+}
+
+.group-count {
+    font-size: 16px;
+    margin-left: 12px;
+    color: gray;
+}
+
+.group-actions img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 @media screen and (max-width: 1036px) {
     .Main-hero {
-        margin-bottom: 20px;
-        width: 45vw;
+        max-width: calc(45vw - 20px);
     }
 }
 
 @media screen and (max-width: 550px) {
-    .hero {
-        justify-content: center; 
-    }
     .Main-hero {
-     margin-bottom: 20px;
-        width: 80vw; 
+        max-width: 100%;
     }
 }
