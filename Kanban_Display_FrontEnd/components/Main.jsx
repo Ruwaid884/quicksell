@@ -16,7 +16,7 @@ import down from '../src/assets/down.svg'
 import backlog from '../src/assets/Backlog.svg'
 import in_progress from '../src/assets/in-progress.svg'
 import Cancelled from '../src/assets/Cancelled.svg'
-import imageA from "../src/assets/human.png"
+import imageA from "../src/assets/human.svg"
 
 
 import Card from "../components/Card";
@@ -113,7 +113,7 @@ const Main = ({ groupBy, orderBy }) => {
                             />
                     }
 
-                    <div style={{float:"right",fontSize:"14px"}}>{priorityNameMap[groupKey] || groupKey}</div>
+                    <h1 style={{float:"right",fontSize:"18px"}}>{priorityNameMap[groupKey] || groupKey}</h1>
                     </div>
                     
                     <div style={{float:"right"}}>

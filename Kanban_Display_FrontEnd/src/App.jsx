@@ -8,29 +8,28 @@ function App() {
     const savedState = localStorage.getItem('groupby');
     return savedState ? JSON.parse(savedState) : "status";
   });
-  
+
   const [orderBy, setOrderBy] = useState(() => {
     const savedState = localStorage.getItem('orderby');
     return savedState ? JSON.parse(savedState) : "priority";
   });
-  
+
   useEffect(() => {
     if (groupBy) {
       localStorage.setItem('groupby', JSON.stringify(groupBy));
     }
   }, [groupBy]);
-  
+
   useEffect(() => {
     if (orderBy) {
       localStorage.setItem('orderby', JSON.stringify(orderBy));
     }
   }, [orderBy]);
-  
 
   return (
     <>
       <Header sortTickets={setOrderBy} groupTickets={setGroupBy} groupby={groupBy} orderby={orderBy} />
-      <div style={{ backgroundColor: "rgba(244,245,249,255)", width: "100%" }}>
+      <div style={{ backgroundColor: "rgba(244,245,249,255)", width: "100%", minHeight: "100vh" }}>
         <Main groupBy={groupBy} orderBy={orderBy} />
       </div>
     </>

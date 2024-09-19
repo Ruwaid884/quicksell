@@ -1,4 +1,4 @@
-import imageA from "../src/assets/human.png"
+import imageA from "../src/assets/human.svg"
 
 const Card = ({ id, title, status, priority, tag, svg }) => {
     return (
@@ -52,33 +52,27 @@ const Card = ({ id, title, status, priority, tag, svg }) => {
                 borderStyle: "solid",
                 borderRadius: "6px",
                 fontSize: "12px", 
+                border: "1px solid #d0d0d0", 
               }}
             >
              <img src={priority}></img>
             </div>
   
             <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderStyle: "solid",
-                borderWidth: "1px",
-                borderRadius: "4px",
-                marginLeft: "8px",
-                padding: "4px", 
-                fontSize: "12px", 
-              }}
-            >
-              <div
-                style={{
-                  display:'flex',
-                  borderRadius: "4px",
-                  backgroundColor: "gray",
-                }}
-              ></div>
-              <span>{tag}</span>
-            </div>
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "4px",
+    marginLeft: "8px",
+    padding: "4px",
+    fontSize: "12px",
+    border: "1px solid #d0d0d0", 
+  }}
+>
+  <span style={{ color: '#888888' }}>{tag}</span>
+</div>
+
           </div>
         </div>
       </>
